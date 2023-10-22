@@ -20,11 +20,11 @@ BATCH_SIZE = 12
 EPOCHS = 10
 
 datagen = ImageDataGenerator(
-    # rotation_range=20,
-    # width_shift_range=0.2,
-    # height_shift_range=0.2,
-    # horizontal_flip=True,
-    # vertical_flip=True
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    horizontal_flip=True,
+    vertical_flip=True
 )
 
 def load_images_from_folder(folder_path, target_size=IMG_SIZE, binarize_marked=False, show_mask=False):
