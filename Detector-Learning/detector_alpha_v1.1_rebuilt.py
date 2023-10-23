@@ -18,7 +18,7 @@ if gpus:
 
 # ハイパーパラメータ
 IMG_SIZE = (1024, 1024)
-BATCH_SIZE = 8
+BATCH_SIZE = 4
 EPOCHS = 100
 LEARNING_RATE = 1e-4
 
