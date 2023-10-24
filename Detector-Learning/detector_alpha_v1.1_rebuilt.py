@@ -1,5 +1,5 @@
 import os
-import numpy as np
+import numpy as np 
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from tensorflow.keras import layers
@@ -19,7 +19,7 @@ if gpus:
 # ハイパーパラメータ
 IMG_SIZE = (1024, 1024)
 BATCH_SIZE = 4
-EPOCHS = 100
+EPOCHS = 2000
 LEARNING_RATE = 1e-4
 
 def load_images_from_folder(folder_path, target_size=IMG_SIZE, binarize_marked=False, show_mask=False):
@@ -134,7 +134,7 @@ model.compile(optimizer=tf.keras.optimizers.Adam(LEARNING_RATE), loss=dice_loss,
 
 # カスタムコールバック
 model_checkpoint = ModelCheckpoint("unet_model.h5", save_best_only=True, verbose=1)
-tensorboard = TensorBoard(log_dir='logs')
+tensorboard = TensorBoard(log_dir='logs', update_freq='batch')  # ← ここを変更
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr=0.001)
 early_stop = EarlyStopping(monitor='val_loss', patience=10)
 
