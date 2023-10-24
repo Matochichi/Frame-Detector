@@ -18,8 +18,8 @@ if gpus:
 
 # ハイパーパラメータ
 IMG_SIZE = (1024, 1024)
-BATCH_SIZE = 4
-EPOCHS = 2000
+BATCH_SIZE = 6
+EPOCHS = 1000
 LEARNING_RATE = 1e-4
 
 def load_images_from_folder(folder_path, target_size=IMG_SIZE, binarize_marked=False, show_mask=False):
