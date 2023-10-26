@@ -17,7 +17,7 @@ if gpus:
 #param
 IMG_SIZE = (1024, 1024)
 BATCH_SIZE = 12
-EPOCHS = 1
+EPOCHS = 20
 
 datagen = ImageDataGenerator(
     rotation_range=20,
@@ -58,8 +58,8 @@ def load_images_from_folder(folder_path, target_size=IMG_SIZE, binarize_marked=F
 #         images.append(img_array)
 #     return np.array(images)
 
-raw_images = load_images_from_folder("resource\\raw_r")
-marked_images, binary_masks = load_images_from_folder("resource\\mask_r", binarize_marked=True, show_mask=True)
+raw_images = load_images_from_folder("resource\\raw")
+marked_images, binary_masks = load_images_from_folder("resource\\mask", binarize_marked=True, show_mask=True)
 
 binary_mask = marked_images[..., 0]
 
