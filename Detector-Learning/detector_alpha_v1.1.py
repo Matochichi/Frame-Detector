@@ -17,7 +17,7 @@ if gpus:
 #param
 IMG_SIZE = (1024, 1024)
 BATCH_SIZE = 8
-EPOCHS = 100
+EPOCHS = 250
 
 datagen = ImageDataGenerator(
     rotation_range=20,
